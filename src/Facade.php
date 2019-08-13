@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Facade as LaravelFacade;
 /**
  * Class Facade.
  *
- * @author overtrue <zacksleo@gmail.com>
+ * @author zacksleo <zacksleo@gmail.com>
  */
 class Facade extends LaravelFacade
 {

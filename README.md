@@ -1,6 +1,6 @@
 <h1 align="center"> laravel-baidu </h1>
 
-<p align="center"> https://github.com/zacksleo/laravel-baidu.git.</p>
+<p align="center"> 百度 SDK for Laravel, 基于  easeava/baidu </p>
 
 
 ## Installing
