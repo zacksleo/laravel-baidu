@@ -74,13 +74,13 @@ class ServiceProvider extends LaravelServiceProvider
                 $accounts = [
                     'default' => config('baidu.'.$name),
                 ];
-                config(['baidu'.$name.'.default' => $accounts['default']]);
+                config(['baidu.'.$name.'.default' => $accounts['default']]);
             } else {
                 $accounts = config('baidu.'.$name);
             }
 
             foreach ($accounts as $account => $config) {
-                $this->app->singleton("baidu{$name}.{$account}", function ($laravelApp) use ($name, $account, $config, $class) {
+                $this->app->singleton("baidu.{$name}.{$account}", function ($laravelApp) use ($name, $account, $config, $class) {
                     $app = new $class(array_merge(config('baidu.defaults', []), $config));
                     if (config('baidu.defaults.use_laravel_cache')) {
                         $app['cache'] = $laravelApp['cache.store'];
@@ -90,7 +90,7 @@ class ServiceProvider extends LaravelServiceProvider
                     return $app;
                 });
             }
-            $this->app->alias("baidu{$name}.default", 'baidu'.$name);
+            $this->app->alias("baidu{$name}.default", 'baidu.'.$name);
             $this->app->alias("baidu{$name}.default", 'easebaidu.'.$name);
 
             $this->app->alias('baidu.'.$name, $class);
