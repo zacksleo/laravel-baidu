@@ -1,0 +1,29 @@
+{
+    "name": "zacksleo\/laravel-baidu",
+    "description": "laravel SDK, 基于 easeava/baidu",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zacksleo",
+            "email": "zacksleo@gmail.com"
+        }
+    ],
+    "require": {
+        "easeava/baidu": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zacksleo\\LaravelBaidu\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zacksleo\\LaravelBaidu\\ServiceProvider"
+            ],
+            "aliases": {
+                "EaseBaidu": "Zacksleo\\LaravelBaidu\\Facade"
+            }
+        }
+    }
+}
