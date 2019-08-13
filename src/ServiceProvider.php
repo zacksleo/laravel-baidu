@@ -76,7 +76,7 @@ class ServiceProvider extends LaravelServiceProvider
                 ];
                 config(['baidu'.$name.'.default' => $accounts['default']]);
             } else {
-                $accounts = config('baidu'.$name);
+                $accounts = config('baidu.'.$name);
             }
 
             foreach ($accounts as $account => $config) {
