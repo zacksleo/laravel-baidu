@@ -90,8 +90,8 @@ class ServiceProvider extends LaravelServiceProvider
                     return $app;
                 });
             }
-            $this->app->alias("baidu{$name}.default", 'baidu.'.$name);
-            $this->app->alias("baidu{$name}.default", 'easebaidu.'.$name);
+            $this->app->alias("baidu.{$name}.default", 'baidu.'.$name);
+            $this->app->alias("baidu.{$name}.default", 'easebaidu.'.$name);
 
             $this->app->alias('baidu.'.$name, $class);
             $this->app->alias('easebaidu.'.$name, $class);
